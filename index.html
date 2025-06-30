@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang=\"zh-Hant\">
+<head>
+    <meta charset=\"UTF-8\">
+    <title>給阿蒨寶寶</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            overflow: hidden;
+        }
+        .heart, h1 {
+            display: none;
+        }
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 90px;
+            background: #ff6f91;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            animation: heartbeat 1s infinite, float 5s infinite alternate;
+            box-shadow: 0 0 20px rgba(255, 111, 145, 0.6);
+        }
+        .heart::before,
+        .heart::after {
+            content: \"\";
+            position: absolute;
+            width: 100px;
+            height: 90px;
+            background: #ff6f91;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(-45deg) scale(1.3);
+            }
+        }
+        @keyframes float {
+            0% {
+                top: 40%;
+            }
+            100% {
+                top: 60%;
+            }
+        }
+        h1 {
+            position: absolute;
+            top: 70%;
+            width: 100%;
+            text-align: center;
+            color: #d81b60;
+            font-size: 48px;
+            font-family: \"Segoe UI\", sans-serif;
+            animation: fadeIn 3s ease-in-out;
+            text-shadow: 0 0 10px rgba(216, 27, 96, 0.7);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .gift {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: url('https://png.pngtree.com/png-clipart/20231017/original/pngtree-christmas-gift-box-flat-illustration-png-image_13327118.png') no-repeat center/contain;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class=\"gift\" onclick=\"reveal()\"></div>
+    <div class=\"heart\"></div>
+    <h1>給阿蒨寶寶:<br/>我最愛妳ㄌ！</h1>
+
+    <script>
+        window.addEventListener('click', function() {
+            document.getElementById('bgm').play();
+        });
+        function reveal() {
+            document.querySelector('.gift').style.display = 'none';
+            document.querySelector('.heart').style.display = 'block';
+            document.querySelector('h1').style.display = 'block';
+            document.getElementById('bgm').play();
+        }
+    </script>
+</body>
+</html>
