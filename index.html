@@ -83,13 +83,21 @@
             height: 500px;
             cursor: pointer;
             opacity: 0.7;
+
+            /* 新增：讓文字置中 */
+            display: flex;
+            justify-content: center; /* 水平置中 */
+            align-items: center;    /* 垂直置中 */
+            font-size: 200px;       /* 調整 emoji 大小，看你喜歡 */
+            user-select: none;      /* 防止點擊時選中文字 */
         }
+
     </style>
 </head>
 <body>
 
-    <div class=\"gift\" onclick=\"reveal()\">🎁</div>
-    <div class=\"heart\"></div>
+    <div class="gift" onclick="reveal()">🎁</div>
+    <div class="heart"></div>
     <h1>給阿蒨寶寶:<br/>我最愛妳ㄌ！</h1>
 
     <script>
